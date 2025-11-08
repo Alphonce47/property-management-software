@@ -1,0 +1,3 @@
+root        1289  0.0  0.0   2584  1548 pts/0    S+   13:53   0:00 sh -c next dev
+root        1290  0.0  0.0 11516664 58320 pts/0  Sl+  13:53   0:00 node /workspace/property-management/node_modules/.bin/next dev
+root        1625  0.0  0.0   3752  1536 pts/0    S+   14:06   0:00 grep next dev

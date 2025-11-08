@@ -1,0 +1,3 @@
+npm warn exec The following package was not found and will be installed: create-next-app@16.0.1
+[?25l[2K[1G[36m?[39m [1mWould you like to use React Compiler?[22m [90m›[39m [36m[4mNo[39m[24m [90m/[39m Yes[2K[1G[2K[1G[32m✔[39m [1mWould you like to use React Compiler?[22m [90m…[39m [36m[4mNo[39m[24m [90m/[39m Yes
+[?25h[?25l[2K[1G[36m?[39m [1mWould you like to use Turbopack? (recommended)[22m [90m›[39m No [90m/[39m [36m[4mYes[39m[24mTerminated

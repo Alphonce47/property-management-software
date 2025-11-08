@@ -1,0 +1,9 @@
+npm warn deprecated @supabase/auth-helpers-shared@0.7.0: This package is now deprecated - please use the @supabase/ssr package instead.
+npm warn deprecated @supabase/auth-helpers-nextjs@0.10.0: This package is now deprecated - please use the @supabase/ssr package instead.
+
+added 55 packages, and audited 519 packages in 6s
+
+170 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
