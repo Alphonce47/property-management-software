@@ -4,13 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">PropertyHub</h1>
+              <h1 className="text-2xl font-bold text-gray-900">PropertyHub</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="#features" className="text-gray-600 hover:text-gray-900">
@@ -175,15 +175,15 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Transform Your Property Management?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-gray-400 mb-8">
             Join hundreds of landlords and property managers in Kenya who trust PropertyHub
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-3" asChild>
+          <Button size="lg" className="text-lg px-8 py-3" asChild>
             <Link href="/register">Start Your Free Trial Today</Link>
           </Button>
         </div>

@@ -1,16 +1,40 @@
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
-  const res = NextResponse.next()
-  const supabase = createMiddlewareClient({ req, res })
+  let response = NextResponse.next({
+    request: {
+      headers: req.headers,
+    },
+  })
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return req.cookies.get(name)?.value
+        },
+        set(name: string, value: string, options: any) {
+          req.cookies.set({ name, value, ...options })
+          response = NextResponse.next({ request: { headers: req.headers } })
+          response.cookies.set({ name, value, ...options })
+        },
+        remove(name: string, options: any) {
+          req.cookies.set({ name, value: '', ...options })
+          response = NextResponse.next({ request: { headers: req.headers } })
+          response.cookies.set({ name, value: '', ...options })
+        },
+      },
+    }
+  )
 
   const {
     data: { session },
   } = await supabase.auth.getSession()
 
-  // Protected routes
   if (req.nextUrl.pathname.startsWith('/dashboard') && !session) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/login'
@@ -18,14 +42,13 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
-  // Auth routes when already logged in
   if ((req.nextUrl.pathname === '/login' || req.nextUrl.pathname === '/register') && session) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/dashboard'
     return NextResponse.redirect(redirectUrl)
   }
 
-  return res
+  return response
 }
 
 export const config = {

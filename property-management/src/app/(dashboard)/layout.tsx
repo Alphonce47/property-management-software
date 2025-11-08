@@ -64,7 +64,7 @@ export default function DashboardLayout({
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex items-center justify-between h-16 px-6 border-b">
-            <h1 className="text-xl font-bold text-blue-600">PropertyHub</h1>
+            <h1 className="text-xl font-bold text-gray-900">PropertyHub</h1>
             <Button
               variant="ghost"
               size="icon"
@@ -86,7 +86,7 @@ export default function DashboardLayout({
                   className={`
                     flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors
                     ${isActive
-                      ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                      ? 'bg-gray-100 text-gray-900 border-r-2 border-gray-900'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }
                   `}
@@ -101,7 +101,7 @@ export default function DashboardLayout({
           {/* User section */}
           <div className="border-t p-4">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+              <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white text-sm font-medium">
                 {user?.email?.[0]?.toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
@@ -148,7 +148,7 @@ export default function DashboardLayout({
                   <input
                     type="text"
                     placeholder="Search properties, tenants, or transactions..."
-                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 w-96"
+                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-gray-500 focus:border-gray-500 w-96"
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function DashboardLayout({
               </Button>
 
               {/* User avatar */}
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+              <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white text-sm font-medium">
                 {user?.email?.[0]?.toUpperCase()}
               </div>
             </div>

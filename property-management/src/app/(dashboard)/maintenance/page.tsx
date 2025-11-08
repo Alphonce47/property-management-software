@@ -411,10 +411,10 @@ export default function MaintenancePage() {
                           <h4 className="font-medium text-sm line-clamp-2">{request.title}</h4>
                           <p className="text-xs text-gray-600 line-clamp-2">{request.description}</p>
                           <div className="flex items-center gap-2">
-                            <Badge size="sm" className={getPriorityColor(request.priority)}>
+                            <Badge className={getPriorityColor(request.priority)}>
                               {request.priority}
                             </Badge>
-                            <Badge variant="outline" size="sm">
+                            <Badge variant="outline">
                               {request.category}
                             </Badge>
                           </div>
